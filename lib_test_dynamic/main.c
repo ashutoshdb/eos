@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include"airth.h"
+
 int main(){
 int a = 10;
 int b = 10;
