@@ -23,3 +23,7 @@
 
 export LD_LIBRARY_PATH=.
 
+# system call
+
+- man 2 open,read,write to see all the details 
+- fd = open("desd.txt", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR); 
