@@ -5,6 +5,7 @@
        #include <stdlib.h>
 #include<unistd.h>
 #include<errno.h>
+#include<string.h>
 
 
 
@@ -21,6 +22,6 @@ int main(int argc, char const *argv[])
 
     }
     read(fdr,buffer,50);
-    write(fdw, buffer,sizeof(buffer));
+    write(fdw, buffer,strlen(buffer));
     return 0;
 }
