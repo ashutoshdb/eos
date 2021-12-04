@@ -52,6 +52,11 @@ export LD_LIBRARY_PATH=.
 
 - context saving ->  the value of registers in cpu,sp,ip,gpr,flags is saved logical ds in pcb or stack of process   
 - context restore -> restore the value in physical copy from pcb or stack of process 
-- cow copy on write
+- pthread_create()
+- cow copy on write -> os optimization 
+- blocking (not come with data) and non blocking api (come with data or error) 
 
+# day 8
 
+- valgrind for memory leak 
+            
