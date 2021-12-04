@@ -48,3 +48,10 @@ export LD_LIBRARY_PATH=.
     - we can kill the process in the waiting state by kill -9 command
     - we cant no go into run state to wait state without runnig it  
 
+# day 7 
+
+- context saving ->  the value of registers in cpu,sp,ip,gpr,flags is saved logical ds in pcb or stack of process   
+- context restore -> restore the value in physical copy from pcb or stack of process 
+- cow copy on write
+
+

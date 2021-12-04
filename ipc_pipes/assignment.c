@@ -17,15 +17,16 @@
         if(0 ==id){
             close(fd_1[1]);
             close(fd_2[0]);
-            printf("Child ");
-            read(fd_1[0], num ,8);   
-
-
+           
+            read(fd_1[0], num ,8); 
+             printf("Child ");  
+            close(fd_1[0]);
 
 
             sum[0] = num[0]+num[1];
             // printf("sum %d \n",sum[0]);
             write(fd_2[1],sum,4);
+             close(fd_2[1]);
         }
         else{
             close(fd_1[0]);
@@ -36,11 +37,13 @@
             printf("Enter 2st Numbers \n");
             scanf("%d",&num[1]); 
             write(fd_1[1], num,8);
+            close(fd_1[1]);
 
 
 
             read(fd_2[0], sum ,sizeof(sum));
-            printf("sum of the two numbers retured by child process: %d",sum[0]);
+            printf("sum of the two numbers retured by child process: %d \n",sum[0]);
+             close(fd_2[0]);
         }
        
        
