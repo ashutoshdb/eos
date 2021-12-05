@@ -60,9 +60,12 @@ export LD_LIBRARY_PATH=.
 
 - valgrind for memory leak 
 
-stack pointer
-stack
-stack frame is created when u call a fun it hold argument return address
+- stack pointer
+- stack
+- stack frame is created when u call a fun it hold argument, local variable return address of the next inst. after the funtion
+- racearound condition for global variable
+
+- try on raspberrypie stack with gdb gef
 
 
             
