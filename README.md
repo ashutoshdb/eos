@@ -59,4 +59,10 @@ export LD_LIBRARY_PATH=.
 # day 8
 
 - valgrind for memory leak 
+
+stack pointer
+stack
+stack frame is created when u call a fun it hold argument return address
+
+
             
