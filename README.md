@@ -67,5 +67,21 @@ export LD_LIBRARY_PATH=.
 
 - try on raspberrypie stack with gdb gef
 
+# day 9 and day 10
 
-            
+- Race around condition is the problem in which shared space is access by both the threads at the same time
+- Mutal exclusion is the solution
+- crital region is a region in which comman varilable are used between mutiple threads and IT SHOULD BE AS SMALL AS POSSIBLE
+- In mutex(provide mutal exclusion) when lock is used in critical region and other thread go in wait state until unlock
+- mutex implimanted in user space 
+- 1-> futex = fast mutex
+- 2-> recursive mutex
+- 3->  adaptive mutex
+- 4->  error checking mutex
+## if there is shared resource we should have mutal exclusion (mutex or semipolise)
+## try to have small critical reagion
+
+
+- if we lock 2 time a thread(we call a function in which lock is happend inside a lock ) then it will put that thread into wait condition and we will face deadlock situation 
+
+- to create different time of mutex using attributes or initialise

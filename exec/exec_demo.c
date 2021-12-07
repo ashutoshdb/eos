@@ -9,6 +9,11 @@ int main(int argc, char const *argv[])
     pid_t id;
     unsigned char cmd[16];
     int fd[2];
+  while (1)
+  {
+    
+  
+  
     pipe(fd);
     id = fork();
   // execl("path", "commands")
@@ -18,15 +23,18 @@ int main(int argc, char const *argv[])
         char cmd_path[]="/bin/";
         strcat(cmd_path,cmd);
         printf("%s\n", cmd_path);
-        printf ("\nChild :Before exec.\n");
+       // printf ("\nChild :Before exec.\n");
         execl(cmd_path, cmd_path, NULL);
     }
     else
     {
     close(fd[0]);
-    printf("DESDShell$");
+    printf("DESDShell$ \n");
     scanf("%s",cmd);
     write(fd[1], &cmd,16);
     }
+}
+
     return 0;
+
 }
