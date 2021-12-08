@@ -23,7 +23,7 @@ pthread_mutex_t mutexCount;
      while (1)
      {
      pthread_mutex_lock(&mutexCount);
-     square();
+     
 count++;
 // deadlock condition because two lock is called one bye square and other is inc
 printf("%d count \n", count);
@@ -38,6 +38,7 @@ pthread_mutex_unlock(&mutexCount);
     pthread_mutex_lock(&mutexCount);
     count--;
     printf("%d count \n", count);
+    square();
     pthread_mutex_unlock(&mutexCount);
 }}
 
@@ -52,7 +53,7 @@ int main(int argc, char const *argv[])
     // close mutex 
     pthread_create(&helloID, NULL, inc_thread, NULL);
     pthread_join(helloID, NULL);
-    pthread_create(&byeID, NULL, inc_thread, NULL);
+    pthread_create(&byeID, NULL, dec_thread, NULL);
     pthread_join(byeID, NULL);
     pthread_mutex_destroy(&mutexCount);
 

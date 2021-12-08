@@ -48,7 +48,7 @@ int main(int argc, char const *argv[])
     // close mutex 
     pthread_create(&helloID, NULL, inc_thread, NULL);
     pthread_join(helloID, NULL);
-    pthread_create(&byeID, NULL, inc_thread, NULL);
+    pthread_create(&byeID, NULL, dec_thread, NULL);
     pthread_join(byeID, NULL);
     pthread_mutex_destroy(&mutexCount);
 
