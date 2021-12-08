@@ -10,6 +10,7 @@ pthread_mutexattr_t mutexCountAttr; // to set the type of mutex we intilase the 
      {
      pthread_mutex_lock(&mutexCount);
      count = count*count;
+     pthread_mutex_unlock(&mutexCount);
      }
  }
 
@@ -36,7 +37,7 @@ pthread_mutex_unlock(&mutexCount);
 }}
 
 int main(int argc, char const *argv[])
-{
+{ 
     pthread_t helloID;
     pthread_t byeID;
     printf("Main Thread \n");
@@ -47,9 +48,9 @@ int main(int argc, char const *argv[])
     // intialise mutex
     // close mutex 
     pthread_create(&helloID, NULL, inc_thread, NULL);
-    pthread_join(helloID, NULL);
     pthread_create(&byeID, NULL, dec_thread, NULL);
     pthread_join(byeID, NULL);
+    pthread_join(helloID, NULL);
     pthread_mutex_destroy(&mutexCount);
 
     return 0;

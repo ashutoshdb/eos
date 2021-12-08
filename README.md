@@ -91,5 +91,5 @@ export LD_LIBRARY_PATH=.
     - counting
 
 
-- sem wait check the value by one and dec by 1
+- sem wait check the value by one and dec by 1 if value is 0 it waits if value is 1 its execute
 - sem post increse the value by 1
