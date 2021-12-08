@@ -85,3 +85,11 @@ export LD_LIBRARY_PATH=.
 - if we lock 2 time a thread(we call a function in which lock is happend inside a lock ) then it will put that thread into wait condition and we will face deadlock situation 
 
 - to create different time of mutex using attributes or initialise
+
+- semaphore  
+    - binary 1-> signalling 2-> mutual exclusion 
+    - counting
+
+
+- sem wait check the value by one and dec by 1
+- sem post increse the value by 1

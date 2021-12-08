@@ -9,9 +9,9 @@
 
 // printf("Bye Thread \n");
 // }
-int count;
+int count=10;
 pthread_mutex_t mutexCount;
-pthread_mutexattr_t mutexCountAttr; // to set the type of mutex we intilase the attribute
+pthread_mutexattr_t mutexCountAttr; 
 
 
  void *inc_thread(void *arg){
@@ -19,7 +19,7 @@ pthread_mutexattr_t mutexCountAttr; // to set the type of mutex we intilase the 
      {
      pthread_mutex_lock(&mutexCount);
 count++;
-printf("%d count \n", count);
+printf("inc count%d\n", count);
 pthread_mutex_unlock(&mutexCount);
 
 }
@@ -30,26 +30,24 @@ pthread_mutex_unlock(&mutexCount);
      {
 pthread_mutex_lock(&mutexCount);
 count--;
-printf("%d count \n", count);
+printf("dec count %d\n", count);
 pthread_mutex_unlock(&mutexCount);
 }}
 
 int main(int argc, char const *argv[])
 {
-    pthread_t helloID;
-    pthread_t byeID;
+    pthread_t incID;
+    pthread_t decID;
     printf("Main Thread \n");
 
-   pthread_mutexattr_init(&mutexCountAttr); // intailise default futex then change type
-   pthread_mutexattr_settype(&mutexCountAttr, PTHREAD_MUTEX_RECURSIVE);
     pthread_mutex_init(&mutexCount,&mutexCountAttr);
 
     // intialise mutex
     // close mutex 
-    pthread_create(&helloID, NULL, inc_thread, NULL);
-    pthread_join(helloID, NULL);
-    pthread_create(&byeID, NULL, inc_thread, NULL);
-    pthread_join(byeID, NULL);
+    pthread_create(&incID, NULL, inc_thread, NULL);
+    pthread_join(incID, NULL);
+    pthread_create(&decID, NULL, inc_thread, NULL);
+    pthread_join(decID, NULL);
     pthread_mutex_destroy(&mutexCount);
     return 0;
 }
