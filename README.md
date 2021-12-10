@@ -93,3 +93,8 @@ export LD_LIBRARY_PATH=.
 
 - sem wait check the value by one and dec by 1 if value is 0 it waits if value is 1 its execute
 - sem post increse the value by 1
+- counting semaphore uses in resource management 
+
+
+
+?? counting semaphore ?? named semaphore

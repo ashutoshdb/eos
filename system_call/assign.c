@@ -15,13 +15,14 @@ int main(int argc, char const *argv[])
     int fdr, fdw;
     char buffer[50];
     fdr = open(argv[1], O_RDONLY);
-    fdw = open(argv[2], O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
+    fdw = open(argv[2], O_WRONLY, S_IRUSR | S_IWUSR);
     if(-1 == fdr | -1 == fdw){
            perror("Error \n:");
            exit(EXIT_FAILURE);
 
     }
-    read(fdr,buffer,50);
+    read(fdr,buffer,sizeof(buffer)); // sizeof read data which is in the file
+    printf("%s" );
     write(fdw, buffer,strlen(buffer));
     return 0;
 }
