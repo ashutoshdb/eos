@@ -103,3 +103,8 @@ export LD_LIBRARY_PATH=.
 
 - shared memory is created(with name and size ) in user space and is much faster and are of fixed size 
 - face race condion and semahpore is used to solve race conditon because they are used in between threads
+- counting semaphore uses in resource management 
+
+
+
+?? counting semaphore ?? named semaphore
